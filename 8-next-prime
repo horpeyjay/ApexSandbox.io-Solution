@@ -1,0 +1,23 @@
+public Integer nextPrime(Integer num) {    //code here
+    Integer primeNumber = num + 1;
+    While (true){
+        if(isPrime(primeNumber)){
+            return primeNumber;
+        }else{
+            primeNumber++;
+        }
+    }
+    
+}
+
+public static Boolean isPrime(Integer num){
+    if(num < 1){
+        return false;
+    }
+    for(Integer i = 0; i < Math.sqrt(num); i++){
+        if(Math.mod(num, i) == 0){
+            return false;
+        }
+    }
+    return true;
+}
