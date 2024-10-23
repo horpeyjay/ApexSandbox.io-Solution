@@ -1,17 +1,10 @@
 public Id insertStudent(String name, String email) {
     // code here
-    List<apxio__Student__c> aSList = new List<apxio__Student__c>();
     if(name != null && email != null){
         apxio__Student__c newStudentRecord = new apxio__Student__c();
         newStudentRecord.Name = name;
         newStudentRecord.apxio__Email__c = email;
-        aSList.add(newStudentRecord);
     }
-    insert aSList;
-    List<Id> studentIds = new List<Id>();
-    for (apxio__Student__c a : aSList){
-        Id studentId = a.Id;
-        studentIds.add(studentId);
-    }
-    return studentIds;
+    insert newStudentRecord;
+    return newStudentRecord.Id;
 }
