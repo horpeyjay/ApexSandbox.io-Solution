@@ -1,4 +1,10 @@
-public Integer nextPrime(Integer num) {    //code here
+public Integer nextPrime(Integer num) { 
+    
+    //code here
+
+    if (num < 2){
+        return 2;
+    }
     Integer primeNumber = num + 1;
     while (true){
         if(isPrime(primeNumber)){
@@ -13,7 +19,9 @@ public Integer nextPrime(Integer num) {    //code here
 }
 
 public static Boolean isPrime(Integer num){
-    
+    if(num < 2){
+        return false;
+    }
     for(Integer i = 2; i < Math.sqrt(num); i++){
         if(Math.mod(num, i) == 0){
             return false;
