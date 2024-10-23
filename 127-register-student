@@ -16,13 +16,14 @@ public String registerStudent(String name, String phone, String email) {
         system.debug('Error while insert new record --> ' + ex.getMessage());
         return null;
     }
-
+    String regNum;
     Id studentId = newStudentRecord.Id;
     if(studentId != null){
         apxio__Student__c records = [Select apxio__Registration_Number__c from apxio__Student__c where Id = : studentId];
         if(records != null ){
             String regNum = records.apxio__Registration_Number__c;
-            return regNum;
+            
         }
     }
+    return regNum;
 }
