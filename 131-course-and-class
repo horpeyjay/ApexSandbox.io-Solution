@@ -1,6 +1,6 @@
 public void createCourseAndClass(String name, String description) {
     // code here
-    if(name != null && description != null){
+    if(name != null){
 
    
         apxio__Course__c newCourse = new apxio__Course__c();
