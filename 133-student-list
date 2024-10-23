@@ -5,7 +5,7 @@ public void insertStudents(List<String> studentNames, List<String> studentEmails
 
     //create a Map to store student name and email
     Map<String, String> studentMap = new Map<String, String>();
-    if(studentNames.size() == studentEmails.size() && (studentNames != null && studentEmails != null){
+    if((studentNames.size() == studentEmails.size()) && (studentNames != null && studentEmails != null)){
         for (String studentName : studentNames){
             for(String email : studentEmails){
                 studentMap.put(studentName, email);
