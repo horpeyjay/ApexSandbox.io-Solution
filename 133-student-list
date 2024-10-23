@@ -6,25 +6,16 @@ public void insertStudents(List<String> studentNames, List<String> studentEmails
     //create a Map to store student name and email
     Map<String, String> studentMap = new Map<String, String>();
     if((studentNames.size() == studentEmails.size()) && (studentNames != null && studentEmails != null)){
-        for (String studentName : studentNames){
-            for(String email : studentEmails){
-                studentMap.put(studentName, email);
-            }
+        for(Integer i = 0; i < studentNames.size(); i++){
+            apxio__Student__c newStudent = new apxio__Student__c();
+            newStudent.Name = studentNames[i];
+            newStudent.apxio__Email__c = studentEmails[i];
+            newStudentRecords.add(newStudent);
         }
-
     }else{
         system.debug('Lists must be of the same size');
     }
 
-    if (studentMap.size() > 0){
-        apxio__Student__c stu = new apxio__Student__c();
-        for(String sName : studentMap.keySet()){
-            stu.Name = sName;
-            stu.apxio__Email__c = studentMap.get(sName);
-            newStudentRecords.add(stu);
-        }
-
-    }
     if(newStudentRecords.size() > 0){
         try{
             insert newStudentRecords;
