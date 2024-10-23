@@ -11,8 +11,8 @@ public Integer fibonacci(Integer n) {
 
     for(Integer i = 3; i <= n; i++){
         Integer temp = previousValue + nextValue;
-        nextValue = previousValue;
-        previousValue = temp;
+        previousValue = nextValue;
+        nextValue = temp;
     }
 
     return nextValue;
