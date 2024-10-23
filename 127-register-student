@@ -1,0 +1,21 @@
+public String registerStudent(String name, String phone, String email) {
+    // code here
+
+    apxio__Student__c newStudentRecord = new apxio__Student__c();
+    if(name != null && phone != null && email != null){
+        newStudentRecord.Name = name;
+        newStudentRecord.apxio__Email__c = email;
+        newStudentRecord.apxio__Phone__c = phone;
+    }
+    
+    try{
+        insert newStudentRecord;
+    }catch(Exception ex){
+        system.debug('Error while insert new record --> ' + ex.getMessage());
+    }
+
+    Id studentId = newStudentRecord.Id;
+    String regNum = [Select apxio__Registration_Number__c from apxio__Student__c where Id = studentId];
+
+    return regNum;
+}
