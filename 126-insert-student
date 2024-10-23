@@ -1,7 +1,8 @@
 public Id insertStudent(String name, String email) {
     // code here
+    apxio__Student__c newStudentRecord = new apxio__Student__c();
     if(name != null && email != null){
-        apxio__Student__c newStudentRecord = new apxio__Student__c();
+        
         newStudentRecord.Name = name;
         newStudentRecord.apxio__Email__c = email;
     }
