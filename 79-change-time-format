@@ -11,8 +11,6 @@ public String changeTimeFormat(String strTime) {
 
     if(myHour > 12){
         myHour -= 12;
-    }else if(myHour == 0){
-        myHour = 12;
     }
     
     String hour;
