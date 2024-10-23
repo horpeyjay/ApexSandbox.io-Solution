@@ -1,0 +1,19 @@
+public String reverseWordsInASentence(String sentence){
+    //your flawless code here
+
+    List<String> listString = sentence.split(' ');
+
+    List<String> reverseListString = new String[];
+
+    for(Integer i = listString.size(); i == 0; i--){
+        if(i == listString.size() || i == 0){
+            String word = listString[i];
+            reverseListString.add(word);
+        }else{
+            String word = listString[i] + ' ';
+            reverseListString.add(word);
+        }
+        
+        return reverseListString;
+    }
+}
