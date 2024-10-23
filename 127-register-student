@@ -6,16 +6,19 @@ public String registerStudent(String name, String phone, String email) {
         newStudentRecord.Name = name;
         newStudentRecord.apxio__Email__c = email;
         newStudentRecord.apxio__Phone__c = phone;
+    }else{
+        return null;
     }
     
     try{
         insert newStudentRecord;
     }catch(Exception ex){
         system.debug('Error while insert new record --> ' + ex.getMessage());
+        return null;
     }
 
     Id studentId = newStudentRecord.Id;
-    String regNum = [Select apxio__Registration_Number__c from apxio__Student__c where Id = studentId];
+    String regNum = [Select apxio__Registration_Number__c from apxio__Student__c where Id = : studentId];
 
     return regNum;
 }
