@@ -10,7 +10,8 @@ public Id insertStudent(String name, String email) {
     insert aSList;
     List<Id> studentIds = new List<Id>();
     for (apxio__Student__c a : aSList){
-        studentIds.add(a.Id);
+        Id studentId = a.Id;
+        studentIds.add(studentId);
     }
     return studentIds;
 }
