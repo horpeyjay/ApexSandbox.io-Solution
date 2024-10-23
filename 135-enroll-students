@@ -7,7 +7,7 @@ public void enrollStudents(List<String> emails, String className) {
         List<apxio__Student__c> studentList = [Select Id, Name, Email From apxio__Student__c Where Email In : emails];
 
         //query the class from the class name provided
-        List<apxio__Class__c> classOfStudent = [Select Id, Name From apxio__Class__c where Name = className];
+        List<apxio__Class__c> classOfStudent = [Select Id, Name From apxio__Class__c where Name = :className];
 
         //instance of enrollement object 
         List<apxio__Class_Enrollment__c> enrollmentToInsert = new List<apxio__Class_Enrollment__c>();
