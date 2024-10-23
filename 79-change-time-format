@@ -1,32 +1,27 @@
 public String changeTimeFormat(String strTime) {
     //code here
 
-    Integer myHour = Integer.ValueOf(strTime.subStringBefore(':'));
-    Integer myMinute = Integer.ValueOf(strTime.subStringAfter(':'));
+    // Extract the hour and minute from the string
+    Integer myHour = Integer.valueOf(strTime.substring(0, 2));
+    Integer myMinute = Integer.valueOf(strTime.substring(3, 5));
 
-    string timePeriod = 'AM';
-    if(myHour >= 12){
-        timePeriod = 'PM';
-    }
-
-    if(myHour > 12){
-        myHour -= 12;
+    // Determine AM or PM
+    String period = 'AM';
+    if (myHour >= 12) {
+        period = 'PM';
     }
     
-    String hour;
-    if(myHour > 10){
-        hour = '0' + myHour;
-    }else{
-        hour = String.ValueOf(myHour);
+    // Convert 24-hour format to 12-hour format
+    if (myHour > 12) {
+        myHour -= 12;
+    } else if (myHour == 0) {
+        myHour = 12;
     }
 
-    string minute;
-    if(myMinute < 10){
-        minute = '0'+ myMinute;
-    }else{
-        minute = String.ValueOf(myMinute);
-    }
+    // Format the time string
+    String hourString = myHour < 10 ? '0' + myHour : String.valueOf(myHour);
+    String minuteString = myMinute < 10 ? '0' + myMinute : String.valueOf(myMinute);
+    String myConvertedStringTime = hourString + ':' + minuteString + ' ' + period;
 
-    String convertedTime = hour + ': '+ minute + ' ' + timePeriod;
-    return convertedTime;
+    return myConvertedStringTime;
 }
