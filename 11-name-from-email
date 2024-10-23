@@ -10,6 +10,6 @@ public String nameFromEmail(String email) {
     String capFirst = firstName.capitalize();
     String capLast = lastName.capitalize();
 
-    String fullName = capFirst + capLast;
+    String fullName = capFirst + ' '+ capLast;
     return fullName;
 }
