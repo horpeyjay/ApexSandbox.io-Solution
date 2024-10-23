@@ -1,14 +1,34 @@
 public String changeTimeFormat(String strTime) {
     //code here
 
-    String myHour = strTime.subStringBefore(':');
-    String myMinute = strTime.subStringAfter(':');
+    Integer myHour = Integer.ValueOf(strTime.subStringBefore(':'));
+    Integer myMinute = Integer.ValueOf(strTime.subStringAfter(':'));
 
-    Integer hourMyTime = (Integer)myHour;
-    Integer minuteMyTIme = (Integer)myMinute;
+    string timePeriod = 'AM';
+    if(myHour > 12){
+        timePeriod = 'PM';
+    }
 
-    Time myTime = Time.newInstance(hourMyTime, minuteMyTIme);
+    if(myHour > 12){
+        myHour -= 12;
+    }else if(myHour == 0){
+        myHour = 12;
+    }
+    
+    String hour;
+    if(myHour > 10){
+        hour = '0' + myHour;
+    }else{
+        hour = String.ValueOf(myHour);
+    }
 
-    String myConvertedStringTime = (String)myTime;
-    return myConvertedStringTime;
+    string minute;
+    if(myMinute < 10){
+        minute = '0'+ myMinute;
+    }else{
+        minute = String.ValueOf(myMinute);
+    }
+
+    String convertedTime = hour + ': '+ minute + ' ' + timePeriod;
+    return convertedTime;
 }
