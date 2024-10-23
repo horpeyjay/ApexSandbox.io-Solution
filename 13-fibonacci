@@ -4,7 +4,7 @@ public Integer fibonacci(Integer n) {
     Integer nextValue = 1;
 
     if (n == 1 || n ==2 ){
-        nextValue;
+        return nextValue;
     }
 
     
