@@ -1,0 +1,14 @@
+public String changeTimeFormat(String strTime) {
+    //code here
+
+    String myHour = strTime.subStringBefore(':');
+    String myMinute = strTime.subStringAfter(':');
+
+    Integer hourMyTime = (Integer)myHour;
+    Integer minuteMyTIme = (Integer)myMinute;
+
+    Time myTime = Time.newInstance(hourMyTime, minuteMyTIme);
+
+    String myConvertedStringTime = (String)myTime;
+    return myConvertedStringTime;
+}
