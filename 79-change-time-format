@@ -11,7 +11,7 @@ public String changeTimeFormat(String strTime) {
     //check for 24 hours clock
     if(hourOfTimeString > 12){
         hourOfTimeString -= 12;
-    }else if(hourOfTimeString = 0){
+    }else if(hourOfTimeString == 0){
         hourOfTimeString = 12;
     }
     String hourString;
