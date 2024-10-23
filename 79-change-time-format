@@ -5,7 +5,7 @@ public String changeTimeFormat(String strTime) {
     Integer myMinute = Integer.ValueOf(strTime.subStringAfter(':'));
 
     string timePeriod = 'AM';
-    if(myHour > 12){
+    if(myHour >= 12){
         timePeriod = 'PM';
     }
 
