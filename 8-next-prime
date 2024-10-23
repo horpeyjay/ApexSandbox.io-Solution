@@ -3,10 +3,12 @@ public Integer nextPrime(Integer num) {    //code here
     while (true){
         if(isPrime(primeNumber)){
             return primeNumber;
+            
         }else{
             primeNumber++;
         }
     }
+    return primeNumber;
 
     
 }
