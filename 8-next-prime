@@ -16,7 +16,7 @@ public static Boolean isPrime(Integer num){
         return false;
     }
     for(Integer i = 2; i < Math.sqrt(num); i++){
-        if(num % i == 0){
+        if(Math.mod(num, i) == 0){
             return false;
         }
     }
