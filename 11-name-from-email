@@ -7,8 +7,8 @@ public String nameFromEmail(String email) {
     firstName = firstName.toLowerCase();
     lastName = lastName.toLowerCase();
 
-    capFirst = firstName.capitalize();
-    capLast = lastName.capitalize();
+    String capFirst = firstName.capitalize();
+    String capLast = lastName.capitalize();
 
     String fullName = capFirst + capLast;
     return fullName;
