@@ -13,7 +13,6 @@ public String reverseWordsInASentence(String sentence){
             String word = listString[i] + ' ';
             reverseListString.add(word);
         }
-        
-        return reverseListString;
     }
+    return reverseListString;
 }
