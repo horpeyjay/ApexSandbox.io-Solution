@@ -2,8 +2,8 @@ public Id insertCourse(String name, String details, Integer credits) {
     // code here
     apxio__Course__c newCourseRecord = new apxio__Course__c();
     if (credits >= 1 || credits <= 4){
-        string c = (string) credits;
-        newCourseRecord.apxio__Credits__c = credits;
+        string c = String.ValueOf(credits);
+        newCourseRecord.apxio__Credits__c = c;
     }
     if(name != null && details != null){
         newCourseRecord.Name = name;
