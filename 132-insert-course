@@ -9,7 +9,11 @@ public Id insertCourse(String name, String details, Integer credits) {
         newCourseRecord.Name = name;
         newCourseRecord.apxio__Course_Details__c = details;
     }
-
-    insert newCourseRecord;
+    try{
+        insert newCourseRecord;
+    }Catch(Exception ex){
+        system.debug('Error while inserting --> ' + ex.getMessage());
+    }
+    
     return newCourseRecord.Id;
 }
