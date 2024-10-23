@@ -18,10 +18,10 @@ public String registerStudent(String name, String phone, String email) {
     }
 
     Id studentId = newStudentRecord.Id;
-    if(!studentId.isEmpty()){
+    if(studentId != null){
         apxio__Student__c records = [Select apxio__Registration_Number__c from apxio__Student__c where Id = : studentId];
-        if(!records.isEmpty()){
-            String regNum = records[0].apxio__Registration_Number__c;
+        if(records != null ){
+            String regNum = records.apxio__Registration_Number__c;
             return regNum;
         }
     }
