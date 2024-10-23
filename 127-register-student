@@ -21,7 +21,7 @@ public String registerStudent(String name, String phone, String email) {
     if(studentId != null){
         apxio__Student__c records = [Select apxio__Registration_Number__c from apxio__Student__c where Id = : studentId];
         if(records != null ){
-            String regNum = records.apxio__Registration_Number__c;
+            regNum = records.apxio__Registration_Number__c;
             
         }
     }
