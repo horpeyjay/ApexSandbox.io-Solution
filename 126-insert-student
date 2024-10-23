@@ -1,11 +1,16 @@
 public Id insertStudent(String name, String email) {
     // code here
-    List<apxio__Student__c> aSC = new List<apxio__Student__c>();
+    List<apxio__Student__c> aSList = new List<apxio__Student__c>();
     if(name != null && email != null){
-        aSC.Name = name;
-        aSC.apxio__Email__c = email;
+        apxio__Student__c newStudentRecord = new apxio__Student__c();
+        newStudentRecord.Name = name;
+        newStudentRecord.apxio__Email__c = email;
+        aSList.add(newStudentRecord);
     }
-    insert aSC;
-    Id studentId = aSC.Id;
-    return studentId;
+    insert aSList;
+    List<Id> studentIds = new List<Id>();
+    for (apxio__Student__c a : aSList){
+        studentIds.add(a.Id);
+    }
+    return studentIds;
 }
