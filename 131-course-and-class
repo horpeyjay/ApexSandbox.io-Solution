@@ -1,25 +1,32 @@
 public void createCourseAndClass(String name, String description) {
     // code here
+    
+    // Create new course
     apxio__Course__c newCourse = new apxio__Course__c();
-    apxio__Class__c newClass = new apxio__Class__c();
-
-    if(name != null && description != null)
-        
-        newCourse.Name = name;
-        newCourse.apxio__Course_Details__c = description;
-
-    }else if(name == null) {
-        newCourse.Name = '';
-    }else if(description == null){
-        newCourse.description = '';
-    }
+    
+    // Handle null values for name and description
+    newCourse.Name = (name != null) ? name : '';
+    newCourse.apxio__Course_Details__c = (description != null) ? description : '';
+    
+    // Insert the new course
     insert newCourse;
+    
+    // Get the Course Id
     Id courseId = newCourse.Id;
-        
-        newClass.apxio__Course__c = courseId;
-        newClass.apxio__Description__c = newCourse.description.left(255);
-        newClass.Name = newCourse.Name;
+    
+    // Create new class linked to the course
+    apxio__Class__c newClass = new apxio__Class__c();
+    newClass.apxio__Course__c = courseId;
+    
+    // Trim the description to 255 characters if necessary
+    String trimmedDescription = (description != null && description.length() > 255) ? description.substring(0, 255) : description;
+    newClass.apxio__Description__c = (trimmedDescription != null) ? trimmedDescription : '';
+    
+    // Set the class name based on the course name
+    newClass.Name = newCourse.Name;
+    
+    // Insert the new class
+    insert newClass;
 
-        insert newClass;
     
 }
