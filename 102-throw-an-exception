@@ -8,12 +8,15 @@ public List<Account> checkAccounts(List<Account> accounts)
         }
 
         for(Account acc : accounts){
-            if(acc.BillingCity == null){
+            if(acc.BillingCity != null){
+                validAccounts.add(acc);
+                
+            }else{
                 throw new AccountException('Invalid BillingCity');
-                break;
+                validAccounts = [];
             }
 
-            validAccounts.add(acc);
+            
         }
     }Catch(AccountException ae){
         system.debug(ae.getMessage());
