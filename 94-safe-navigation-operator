@@ -8,4 +8,5 @@ public String getAccountBillingCityWithSafeNavigation(List<Account> accounts){
    }else{
        finalresult = 'null';
    }
+   return finalresult;
 }
