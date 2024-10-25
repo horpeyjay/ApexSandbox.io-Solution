@@ -12,8 +12,9 @@ public List<Account> checkAccounts(List<Account> accounts)
                 validAccounts.add(acc);
                 
             }else{
-                throw new AccountException('Invalid BillingCity');
                 validAccounts.clear();
+                throw new AccountException('Invalid BillingCity');
+                
             }
 
             
