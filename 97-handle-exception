@@ -6,6 +6,7 @@ public String divide(Integer a, Integer b){
     }
     try{
         String result = String.valueOf(c);
+        return result;
     }catch(Exception ex){
         system.debug('There is an error with this operation ' + ex.getMessage());
     }
