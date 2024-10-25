@@ -1,6 +1,12 @@
 public String getAccountBillingCityWithSafeNavigation(List<Account> accounts){
    // Code here
+   String finalresult;
    String billingCity = accounts[0].BillingCity;
-   billingCity ?. billingCity.toUpperCase : 'null';
-   return billingCity;
+   if(billingCity != null){
+       String result = accounts[0].BillingCity;
+        finalresult = result.toUpperCase();
+   }else{
+       finalresult = 'null';
+   }
+   return finalresult;
 }
