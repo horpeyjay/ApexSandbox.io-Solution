@@ -13,7 +13,7 @@ public List<Account> checkAccounts(List<Account> accounts)
                 
             }else{
                 throw new AccountException('Invalid BillingCity');
-                validAccounts = [];
+                
             }
 
             
