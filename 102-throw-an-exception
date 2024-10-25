@@ -17,6 +17,8 @@ public List<Account> checkAccounts(List<Account> accounts)
     }Catch(Exception ex){
         system.debug('Other exception -->' + ex.getMessage());
     }
+
+    return validAccounts;
 }
 
 //do not remove the following custom-defined exception
