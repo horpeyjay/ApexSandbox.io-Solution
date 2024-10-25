@@ -24,7 +24,7 @@ public List<Account> checkAccounts(List<Account> accounts)
         throw ae;
     }Catch(illegalArgumentException iae){
         system.debug(iae.getMessage());
-        return null;
+        throw iae;
     }Catch(Exception ex){
         system.debug('Other exception -->' + ex.getMessage());
         return null;
