@@ -3,23 +3,26 @@ public List<Account> checkAccounts(List<Account> accounts)
     // code here 
     Account[] validAccounts = new List<Account>();
     Try{
-        if(accounts != null){
-            for(Account acc : accounts){
-                if(acc.BillingCity == null){
-                    throw new AccountException('Invalid BillingCity');
-                }else{
-                    validAccounts.add(acc);
-                }
-            }
-        }else{
+        if(accounts == null){
             throw new illegalArgumentException('accounts should not be null');
+        }
+
+        for(Account acc : accounts){
+            if(acc.BillingCity == null){
+                throw new AccountException('Invalid BillingCity');
+            }
+
+            validAccounts.add(acc);
         }
     }Catch(AccountException ae){
         system.debug(ae.getMessage());
+        return null;
     }Catch(illegalArgumentException iae){
         system.debug(iae.getMessage());
+        return null;
     }Catch(Exception ex){
         system.debug('Other exception -->' + ex.getMessage());
+        return null;
     }
 
     return validAccounts;
