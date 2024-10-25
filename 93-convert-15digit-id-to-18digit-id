@@ -9,7 +9,8 @@ public String convert15to18DigitId(String fifteenDigit)
     }else{
         if(fifteenDigit != null){
             Id Id18new = Id.valueOf(fifteenDigit);
-            return Id18new;
+            
         }
     }
+    return Id18new;
 }
