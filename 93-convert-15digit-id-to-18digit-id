@@ -3,15 +3,11 @@ public String convert15to18DigitId(String fifteenDigit)
     //code here
     string error = '-1';
     String success;
-    try{
-        if(fifteenDigit.length() != 15){
-            return error;
-        }else{
-            Id Id18new = Id.valueOf(fifteenDigit);
-            return Id18new;
-        }
-    }Catch(Exception ex){
-        system.debug('error while processing ID --> ' + ex.getMessage());
-    }
     
+    if(fifteenDigit.length() != 15){
+        return error;
+    }else{
+        Id Id18new = Id.valueOf(fifteenDigit);
+        return Id18new;
+    }
 }
