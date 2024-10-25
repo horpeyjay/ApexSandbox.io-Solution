@@ -1,0 +1,23 @@
+public List<Account> checkAccounts(List<Account> accounts)
+{
+    // code here 
+    Account[] validAccounts = new List<Account>();
+    Try{
+        if(accounts != null){
+            for(Account acc : accounts){
+                if(acc.BillingCity == null){
+                    throw new AccountException('Invalid BillingCity');
+                }else{
+                    validAccounts.add(acc);
+                }
+            }
+        }else{
+            throw new illegalArgumentException('accounts should not be null');
+        }
+    }Catch(Exception ex){
+        system.debug('Other exception -->' + ex.getMessage());
+    }
+}
+
+//do not remove the following custom-defined exception
+public class AccountException extends Exception {}
