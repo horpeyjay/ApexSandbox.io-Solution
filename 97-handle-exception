@@ -1,13 +1,16 @@
 public String divide(Integer a, Integer b){
     //code here
     integer c;
+    String result;
     if(b != 0){
         c = a/b;
     }
     try{
-        String result = String.valueOf(c);
-        return result;
+        result = String.valueOf(c);
+        
     }catch(Exception ex){
         system.debug('There is an error with this operation ' + ex.getMessage());
     }
+
+    return result;
 }
