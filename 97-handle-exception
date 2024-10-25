@@ -3,7 +3,7 @@ public String divide(Integer a, Integer b){
     integer c;
     String result;
     if(a == null || b == null){
-        return null;
+        result = 'Attempt to de-reference a null object';
     }
     if(b != 0){
         c = a/b;
