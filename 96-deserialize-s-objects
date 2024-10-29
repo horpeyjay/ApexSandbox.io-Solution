@@ -3,11 +3,11 @@ public List<Account> getAccountsFromJSONString(String inputJSON){
     List<Account> accounts = new List<Account>();
     Map<String, Object> stringFromJson = (Map<String, Object>) JSON.deserializeUntyped(inputJSON);
     Map<String, String> attributes = (Map<String, String>) stringFromJson.get('attributes');
-    for(Object obj : stringFromJson){
-        Map<String, Object> objectMap = (Map<String, Object>) obj;
+    for(String str : attributes.values()){
+        
         Account acc = new Account();
-        acc.Id = (Id) objectMap.get('Id');
-        acc.Name = (String) objectMap.get('Name');
+        acc.Id = (Id) attributes.get('Id');
+        acc.Name = (String) attributes.get('Name');
 
         accounts.add(acc);
     }
