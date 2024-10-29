@@ -1,7 +1,6 @@
 public List<String> getFieldsValue(Account acc, List<String> fields)
 {
     // code here
-    string value;
     List<String> result = new List<String>();
     for (String s : fields){
         Object value = acc.get(s);
