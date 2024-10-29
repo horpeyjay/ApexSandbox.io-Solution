@@ -1,26 +1,20 @@
 public List<Account> getAccounts(List<Account> accounts) {
     // code here
-    Map<Decimal, Account> annualRevMap = new Map<Decimal, Account>();
+    List<Account> newAccList = new List<Account>();
     if(!accounts.isEmpty()){
         for(Account a : accounts){
             if(a.AnnualRevenue != null){
-                annualRevMap.put(a.AnnualRevenue, a);
+                newAccList.add(a);
             }
         }
     }
-    List<Account> newAcc = new List<Account>();
-    //iterate over the map
-    for(Account a : annualRevMap.values()){
-        for(integer i = 0; i < newAcc.size(); i++){
-            if(a.AnnualRevenue > newAcc[i].AnnualRevenue){
-                integer index = 0;
-                if(i > 0){
-                    index = i - 1;
-                }
-                newAcc.add(index, a);
-            }
+
+    newAccList.sort(new Comparator<Account>({
+        public integer Compare(Account a , Account b){
+            return b.AnnualRevenue.compareTo(a.AnnualRevenue);
         }
-    }
-    return newAcc;
+    }));
+
+    return newAccList;
 }
 // write extra class here 
