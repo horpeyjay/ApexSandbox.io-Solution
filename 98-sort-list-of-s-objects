@@ -4,7 +4,7 @@ public List<Account> getAccounts(List<Account> accounts) {
     if(!accounts.isEmpty()){
         for(Account a : accounts){
             if(a.AnnualRevenue != null){
-                annualRevMap.put(a.AnnualRevenue, Account);
+                annualRevMap.put(a.AnnualRevenue, a);
             }
         }
     }
