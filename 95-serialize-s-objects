@@ -1,9 +1,12 @@
 public String getAccountsInJSONFormat(List<Account> accounts){
   // code here
-  string result;
-  for (Account a : accounts){
-    result = JSON.serialize(a);
-      
-    }
-    return result;
+  string result
+  if(accounts = null){
+      result = 'null';
+  }else if(accounts.isEmpty()){
+      result = '[]';
+  }else{
+      result = JSON.serialize(accounts);
+  }
+  return result;
 }
