@@ -2,6 +2,7 @@ public List<String> getNamesInAscOrder(List<String> accountNames)
 {
     //code here
     if(!accountNames.isEmpty()){
-        return accountNames.sort();
+        accountNames.sort();
     }
+    return accountNames;
 }
