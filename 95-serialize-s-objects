@@ -1,6 +1,6 @@
 public String getAccountsInJSONFormat(List<Account> accounts){
   // code here
-  string result
+  string result;
   if(accounts = null){
       result = 'null';
   }else if(accounts.isEmpty()){
