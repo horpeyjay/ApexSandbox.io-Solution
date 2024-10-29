@@ -1,7 +1,7 @@
 public String getAccountsInJSONFormat(List<Account> accounts){
   // code here
   string result;
-  if(accounts = null){
+  if(accounts == null){
       result = 'null';
   }else if(accounts.isEmpty()){
       result = '[]';
