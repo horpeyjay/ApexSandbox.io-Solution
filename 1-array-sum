@@ -4,7 +4,7 @@ public static Integer arraySum(List<Integer> numbers) {
         return 0;
     }
     Integer total;
-    if(!numbers.isEmpty()){
+    if(!numbers.isEmpty() && numbers.size() > 0){
         for (Integer i : numbers){
             total += i;
         }
