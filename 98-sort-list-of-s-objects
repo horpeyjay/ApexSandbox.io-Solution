@@ -26,8 +26,8 @@ public class AccountWrap implements Comparable{
 
     public Integer compareTo(Object other){
         AccountWrap aw = (AccountWrap) other;
-        Decimal prevAcc = (Decimal) aw.acc.AnnualRevenue;
-        Decimal nextAcc = (Decimal) this.acc.AnnualRevenue;
+        Integer prevAcc = Integer.valueOf(aw.acc.AnnualRevenue);
+        Integer nextAcc = Integer.valueOf(this.acc.AnnualRevenue);
         return prevAcc.compareTo(nextAcc);
     }
 }
