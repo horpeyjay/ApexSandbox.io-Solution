@@ -17,7 +17,7 @@ public List<Account> getAccounts(List<Account> accounts) {
                 if(i > 0){
                     index = i - 1;
                 }
-                newAcc.put(index, a);
+                newAcc.add(index, a);
             }
         }
     }
