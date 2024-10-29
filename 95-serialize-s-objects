@@ -1,7 +1,9 @@
 public String getAccountsInJSONFormat(List<Account> accounts){
   // code here
+  string result;
   for (Account a : accounts){
       String result = JSON.serialize(a);
-      return result;
+      
     }
+    return result;
 }
