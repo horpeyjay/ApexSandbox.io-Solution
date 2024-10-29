@@ -1,20 +1,32 @@
 public List<Account> getAccounts(List<Account> accounts) {
     // code here
-    List<Account> newAccList = new List<Account>();
-    if(!accounts.isEmpty()){
-        for(Account a : accounts){
-            if(a.AnnualRevenue != null){
-                newAccList.add(a);
-            }
-        }
+    List<AccountWrap> accountWrap = new List<AccountWrap>();
+
+    for(Account a : accounts){
+        accountWrap.add(new AccountWrap(a));
     }
 
-    newAccList.sort(new Comparator<Account>() {
-        public integer Compare(Account a , Account b){
-            return b.AnnualRevenue.compareTo(a.AnnualRevenue);
-        }
-    });
+    accountWrap.sort();
 
-    return newAccList;
+    List<Account> newList = new List<Account>();
+
+    for(AccountWrap aw : accountWrap){
+        newList.add(aw.acc);
+    }
+    
 }
 // write extra class here 
+public class accountsort {
+    public class AccountWrap implements Comparable{
+        public Account acc;
+
+        public AccountWrap (Account acc){
+            this.acc = acc;
+        }
+
+        public Integer compareTo(Object other){
+            AccountWrap aw = (AccountWrap) other;
+            return aw.Account.AnnualRevenue.compareTo(this.acc.AnnualRevenue);
+        }
+    }
+}
