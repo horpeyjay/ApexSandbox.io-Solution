@@ -13,20 +13,20 @@ public List<Account> getAccounts(List<Account> accounts) {
     for(AccountWrap aw : accountWrap){
         newList.add(aw.acc);
     }
-    
+    return newList;
 }
 // write extra class here 
-public class accountsort {
-    public class AccountWrap implements Comparable{
-        public Account acc;
 
-        public AccountWrap (Account acc){
-            this.acc = acc;
-        }
+public class AccountWrap implements Comparable{
+    public Account acc;
 
-        public Integer compareTo(Object other){
-            AccountWrap aw = (AccountWrap) other;
-            return aw.Account.AnnualRevenue.compareTo(this.acc.AnnualRevenue);
-        }
+    public AccountWrap (Account acc){
+        this.acc = acc;
+    }
+
+    public Integer compareTo(Object other){
+        AccountWrap aw = (AccountWrap) other;
+        return aw.Account.AnnualRevenue.compareTo(this.acc.AnnualRevenue);
     }
 }
+
