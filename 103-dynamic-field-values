@@ -2,13 +2,14 @@ public List<String> getFieldsValue(Account acc, List<String> fields)
 {
     // code here
     string value;
-    String[] result;
+    List<String> result = new List<String>();
     for (String s : fields){
-        if(acc.get(Schema.Account.s) != null){
-            value = (String) acc.get(Schema.Account.s);
-            result.add(value);
+        Object value = acc.get(s);
+        if(value != null){
+            String field = (String) acc.get(value);
+            result.add(field);
         }else{
-            result.add('null');
+            result.add(null);
         }
     }
 
