@@ -17,7 +17,7 @@ public List<Account> getAccountsFromJSONString(String inputJSON){
                 }
 
                 if(attributes.containsKey('Name')){
-                    acc.Name = attributes.get('Name');
+                    acc.Name = (String) attributes.get('Name');
                 }
                 accounts.add(acc);
             }
