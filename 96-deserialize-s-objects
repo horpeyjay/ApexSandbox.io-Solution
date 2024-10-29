@@ -15,7 +15,9 @@ public List<Account> getAccountsFromJSONString(String inputJSON){
             if(accountMap.containsKey('Name')){
                 acc.Name = (String) accountMap.get('Name');
             }
+            accounts.add(acc);
         }
+        
     }catch (Exception ex){
         system.debug(ex.getMessage());
         return null;
