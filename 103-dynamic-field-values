@@ -10,7 +10,7 @@ public List<String> getFieldsValue(Account acc, List<String> fields)
             String fieldValue = String.ValueOf(fieldtoValueMap.get(s));
             result.add(fieldValue);
         }else{
-            result.add('null');
+            result.add(null);
         }
     }
 
