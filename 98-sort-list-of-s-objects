@@ -1,0 +1,26 @@
+public List<Account> getAccounts(List<Account> accounts) {
+    // code here
+    Map<Decimal, Account> annualRevMap = new Map<Decimal, Account>();
+    if(!accounts.isEmpty()){
+        for(Account a : accounts){
+            if(a.AnnualRevenue != null){
+                annualRevMap.put(a.AnnualRevenue, Account);
+            }
+        }
+    }
+    List<Account> newAcc = new List<Account>();
+    //iterate over the map
+    for(Account a : annualRevMap.values()){
+        for(integer i = 0; i < newAcc.size(); i++){
+            if(a.AnnualRevenue > newAcc[i].AnnualRevenue){
+                integer index = 0;
+                if(i > 0){
+                    index = i - 1;
+                }
+                newAcc.put(index, a);
+            }
+        }
+    }
+    return newAcc;
+}
+// write extra class here 
