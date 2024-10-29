@@ -6,7 +6,7 @@ public List<String> getFieldsValue(Account acc, List<String> fields)
     List<String> result = new List<String>();
 
     for (String s : fields){
-        if(s == fieldtoValueMap.keySet()){
+        if(fieldtoValueMap.containsKey(s)){
             String fieldValue = String.ValueOf(fieldtoValueMap.get(s));
             result.add(fieldValue);
         }else{
