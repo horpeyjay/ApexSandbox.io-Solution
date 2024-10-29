@@ -1,0 +1,14 @@
+public static Integer arraySum(List<Integer> numbers) {
+    //code here
+    if(numbers == null){
+        return 0;
+    }
+    return total;
+    if(!numbers.isEmpty()){
+        for (Integer i : numbers){
+            total += i;
+        }
+    }
+
+    return total;
+}
