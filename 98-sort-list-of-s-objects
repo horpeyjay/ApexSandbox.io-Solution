@@ -2,6 +2,10 @@ public List<Account> getAccounts(List<Account> accounts) {
     // code here
     List<AccountWrap> accountWrap = new List<AccountWrap>();
 
+    if(accounts == null){
+        return null;
+    }
+
     for(Account a : accounts){
         accountWrap.add(new AccountWrap(a));
     }
