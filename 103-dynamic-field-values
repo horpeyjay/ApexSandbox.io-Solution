@@ -1,14 +1,16 @@
 public List<String> getFieldsValue(Account acc, List<String> fields)
 {
     // code here
+    Map<String, Object> fieldtoValueMap = acc.getPopulatedFieldsAsMap();
+
     List<String> result = new List<String>();
+
     for (String s : fields){
-        sObjectField accField = Schema.Account.Fields.getMap().get(s);
-        String value = String.ValueOf(acc.get(accField));
-        if(value != null){
-            result.add(value);
+        if(s == fieldtoValueMap.key()){
+            String fieldValue = String.ValueOf(fieldtoValueMap.get(s));
+            result.add(fieldValue);
         }else{
-            result.add(null);
+            result.add('null');
         }
     }
 
