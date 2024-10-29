@@ -5,8 +5,13 @@ public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> cont
     if(!accounts.isEmpty() && !contacts.isEmpty()){
         return returnsObjects;
     }else{
-        returnsObjects.add(accounts);
-        returnsObjects.add(contacts);
+        for(Account a : accounts){
+            returnsObjects.add(a);
+        }
+        for(Contact c : contacts){
+            returnsObjects.add(c);
+        }
+        
     }
     return returnsObjects;
 }
