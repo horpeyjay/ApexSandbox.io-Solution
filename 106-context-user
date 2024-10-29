@@ -5,8 +5,11 @@ public Map<String,String> getContextUserInformation(){
     String userType = UserInfo.getUserType();
     String userName = UserInfo.getUserName();
 
-    Map<String, String> userKeyinfo = Map<String, String>({'EmailId' => email, 'ProfileId' => profileId, 
-    'Type' => userType, 'UserName' => userName});
+    Map<String, String> userKeyinfo = new Map<String, String>();
+    userKeyinfo.put('EmailId', email);
+    userKeyinfo.put('ProfileId', profileId);
+    userKeyinfo.put('Type', userType);
+    userKeyinfo.put('UserName', userName);
 
     return userKeyinfo;
 }
