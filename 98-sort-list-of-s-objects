@@ -26,7 +26,7 @@ public class AccountWrap implements Comparable{
 
     public Integer compareTo(Object other){
         AccountWrap aw = (AccountWrap) other;
-        return aw.Account.AnnualRevenue.compareTo(this.acc.AnnualRevenue);
+        return aw.acc.AnnualRevenue.compareTo(this.acc.AnnualRevenue);
     }
 }
 
