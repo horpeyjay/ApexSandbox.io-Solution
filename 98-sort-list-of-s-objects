@@ -25,12 +25,14 @@ public class AccountWrap implements Comparable{
     }
 
     public Integer compareTo(Object other) {
-        AccountWrap aw = (AccountWrap) other;
-        Integer prevAcc = (aw.acc.AnnualRevenue != null) ? Integer.valueOf(aw.acc.AnnualRevenue) : 0;
-        Integer nextAcc = (this.acc.AnnualRevenue != null) ? Integer.valueOf(this.acc.AnnualRevenue) : 0;
+        AccountWrap otherWrap = (AccountWrap) other;
 
-        // Compare in descending order
-        return prevAcc > nextAcc ? -1 : (prevAcc < nextAcc ? 1 : 0);
+        // Check for nulls and handle them as the lowest values
+        Integer thisRevenue = (this.acc.AnnualRevenue != null) ? Integer.valueOf(this.acc.AnnualRevenue) : 0;
+        Integer otherRevenue = (otherWrap.acc.AnnualRevenue != null) ? Integer.valueOf(otherWrap.acc.AnnualRevenue) : 0;
+
+        // Sort in descending order by AnnualRevenue
+        return thisRevenue > otherRevenue ? -1 : (thisRevenue < otherRevenue ? 1 : 0);
     }
 
 }
