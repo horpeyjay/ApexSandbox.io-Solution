@@ -3,10 +3,10 @@ public List<String> getFieldsValue(Account acc, List<String> fields)
     // code here
     List<String> result = new List<String>();
     for (String s : fields){
-        Object value = acc.get(s);
+        sObjectField accField = Schema.Account.getFields.getMap().get(s);
+        String value = String.ValueOf(acc.get(accField));
         if(value != null){
-            String field = String.valueOf(acc.get(value));
-            result.add(field);
+            result.add(value);
         }else{
             result.add(null);
         }
