@@ -1,0 +1,17 @@
+public List<String> getFieldsValue(Account acc, List<String> fields)
+{
+    // code here
+    string value;
+    String[] result;
+    for (String s : fields){
+        if(acc.get(Schema.Account.s) != null){
+            value = (String) acc.get(Schema.Account.s);
+            result.add(value);
+        }else{
+            result.add('null');
+        }
+    }
+
+    return result;
+
+}
