@@ -1,8 +1,8 @@
 public List<Account> getAccountsFromJSONString(String inputJSON){
     // code here
     List<Account> accounts = new List<Account>();
-    List<Object> stringFromJson = JSON.deserializeUntyped(inputJSON);
-
+    List<Object> stringFromJson = (List<Object>) JSON.deserializeUntyped(inputJSON);
+    Map<String, String> attributes = (Map<String, Object>) stringFromJson.get('attributes');
     for(Object obj : stringFromJson){
         Map<String, Object> objectMap = (Map<String, Object>) obj;
         Account acc = new Account();
