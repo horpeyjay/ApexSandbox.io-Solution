@@ -9,11 +9,11 @@ public List<Account> getAccounts(List<Account> accounts) {
         }
     }
 
-    newAccList.sort(new Comparator<Account>({
+    newAccList.sort(new Comparator<Account>() {
         public integer Compare(Account a , Account b){
             return b.AnnualRevenue.compareTo(a.AnnualRevenue);
         }
-    }));
+    });
 
     return newAccList;
 }
