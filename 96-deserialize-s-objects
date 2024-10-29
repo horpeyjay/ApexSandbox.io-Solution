@@ -9,17 +9,11 @@ public List<Account> getAccountsFromJSONString(String inputJSON){
 
             Account acc = new Account();
 
-            if(accountMap.containsKey('attributes')){
-                Map<String, Object> attributes = (Map<String, Object>) accountMap.get('attributes');
-
-                if(attributes.containsKey('Id')){
-                    acc.Id = (Id) attributes.get('Id');
-                }
-
-                if(attributes.containsKey('Name')){
-                    acc.Name = (String) attributes.get('Name');
-                }
-                accounts.add(acc);
+            if(accountMap.containsKey('Id')){
+                acc.Id = (Id) accountMap.get('Id');
+            }
+            if(accountMap.containsKey('Name')){
+                acc.Name = (String) accountMap.get('Name');
             }
         }
     }catch (Exception ex){
