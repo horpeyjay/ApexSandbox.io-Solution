@@ -2,19 +2,30 @@ public List<Account> getAccountsFromJSONString(String inputJSON){
     // code here
     List<Account> accounts = new List<Account>();
     try{
-    
-    Map<String, Object> stringFromJson = (Map<String, Object>) JSON.deserializeUntyped(inputJSON);
-    Map<String, String> attributes = (Map<String, String>) stringFromJson.get('attributes');
-    for(String str : attributes.values()){
-        
-        Account acc = new Account();
-        acc.Id = (Id) attributes.get('Id');
-        acc.Name = (String) attributes.get('Name');
+        List<Object> stringToJson = JSON.deserializeUntyped(inputJSON);
 
-        accounts.add(acc);
-    }
-    }Catch(Exception ex){
+        for(Object o : stringToJson){
+            Map<String, Object> accountMap = (Map<String, Object>) o;
+
+            Account acc = new Account();
+
+            if(accountMap.containsKey('attributes')){
+                Map<String, Object> attributes = (Map<String, Object>) accountMap.get('attributes');
+
+                if(attributes.containsKey('Id')){
+                    acc.Id = (Id) attributes.get('Id');
+                }
+
+                if(attributes.containsKey('Name')){
+                    acc.Name = attributes.get('Name');
+                }
+                accounts.add(acc);
+            }
+        }
+    }catch (Exception ex){
+        system.debug(ex.getMessage());
         return null;
     }
+
     return accounts;
 }
