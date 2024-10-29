@@ -4,7 +4,13 @@ public Boolean duplicateContacts(Contact c1, Contact c2) {
         if (c1 != null && c2 != null) { // Ensure c1 and c2 are not null
             if (c1.Email != null && c1.Phone != null && c2.Email != null && c2.Phone != null) {
                 // Check for duplicates based on Phone and Email
-                if (c1.Phone == c2.Phone && c1.Email == c2.Email) {
+                if (c1.Phone == c2.Phone) {
+                    return true; // They are duplicates
+                }
+                if ( c1.Email == c2.Email) {
+                    return true; // They are duplicates
+                }
+                if (c1.Phone == c2.Phone || c1.Email == c2.Email) {
                     return true; // They are duplicates
                 }
                 return false; // They are not duplicates
