@@ -1,43 +1,39 @@
 public class Stack {
-    
-    List<Object> objList = new List<object>();
+    List<Object> objList = new List<Object>();
+
     public void push(Object obj) {
-        //implement push
-        if(obj != null ){
-            if(isEmpty() == false){
-                objList.add(obj);
-            }
+        // Add the object to the top of the stack
+        if (obj != null) {
+            objList.add(obj);
         }
     }
-    
+
     public Object pop() {
-        //implement pop
-        if(!isEmpty()){
+        // Remove and return the object at the top of the stack
+        if (!isEmpty()) {
             Integer index = size() - 1;
-            Object o =  objList.get(index);
+            Object topObject = objList.get(index);
             objList.remove(index);
-            return o;
+            return topObject;
         }
-        return null;
-        
+        return null;  // Return null if the stack is empty
     }
-    
-    public Integer size() {
-        //implement size
-        return objList.size();
-       
-    }
-    
-    public Object peek(){
-        //implement peek
-        if(!isEmpty()){
+
+    public Object peek() {
+        // Return the object at the top of the stack without removing it
+        if (!isEmpty()) {
             return objList.get(size() - 1);
         }
-        return null;
+        return null;  // Return null if the stack is empty
     }
-    
+
+    public Integer size() {
+        // Return the number of objects in the stack
+        return objList.size();
+    }
+
     public Boolean isEmpty() {
-        //implement isEmpty
+        // Return true if the stack is empty, false otherwise
         return objList.isEmpty();
     }
 }
