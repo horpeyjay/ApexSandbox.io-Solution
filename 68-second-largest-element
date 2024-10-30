@@ -1,0 +1,17 @@
+public Integer secondLargest(List<Integer> numbers) {
+    //code here
+    Integer largest = -2147483647 - 1;
+    Integer secondLargest = -2147483647 - 1;
+
+    if(!numbers.isEmpty() || numbers.size() > 0){
+        for(Integer num : numbers){
+            if(num > largest){
+                secondLargest = largest;
+                largest = num;
+            }else if( num < largest && num > secondLargest){
+                secondLargest = num;
+            }
+        }
+    }
+    return secondLargest;
+}
