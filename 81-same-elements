@@ -13,7 +13,11 @@ public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
     List<Integer> sort2 = new List<Integer>(nums2);
 
     sort1.sort();
+    Set<Integer> set1 = new Set<Integer>();
+    set1.addAll(sort1);
     sort2.sort();
+    Set<Integer> set2 = new Set<Integer>();
+    set2.addAll(sort2);
 
     return sort1.equals(sort2);
 }
