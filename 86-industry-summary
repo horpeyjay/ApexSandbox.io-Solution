@@ -1,0 +1,19 @@
+public Map<String, Decimal> industrySummary(List<Account> accounts) {
+    //code here
+    Map<String, Decimal> newIndussum = new Map<String, Decimal>();
+    if(!accounts.isEmpty()){
+        for(Account acc : accounts){
+            if(acc.Industry != null && acc.AnnualRevenue != null){
+                if(!newIndussum.containsKey(acc.Industry)){
+                    newIndussum.put(acc.Industry, acc.AnnualRevenue);
+                }else{
+                    newIndussum.get(acc.Industry) += acc.AnnualRevenue;
+                }
+            }
+        }
+    }
+
+    if(!newIndussum.isEmpty()){
+        return newIndussum;
+    }
+}
