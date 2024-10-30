@@ -8,6 +8,9 @@ public Map<String, String> phonebook(List<Contact> contacts) {
                 String phone = c.Phone;
                 nameToPhoneMap.put(name, phone);
             }
+            if(c.Name != null){
+                nameToPhoneMap.put(c.Name, c.Phone);
+            }
         }
     }
     return nameToPhoneMap;
