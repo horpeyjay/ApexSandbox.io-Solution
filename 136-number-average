@@ -1,0 +1,11 @@
+public Decimal average(List<Decimal> numbers){
+    // your code here
+    Decimal mean;
+    if(!numbers.isEmpty() || numbers != null){
+        for(Integer i = 0; i < numbers.size(); i++){
+            Decimal addedNumbers += numbers[i];
+            mean = addedNumbers.setScale(2);
+        }
+    }
+    return mean;
+}
