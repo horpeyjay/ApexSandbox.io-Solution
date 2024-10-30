@@ -8,7 +8,7 @@ public static Integer findLast(List<Integer> nums, Integer target) {
                    index = i;
                }
            }
-           
+           return index = -1;
        }
     return index;
    }catch(Exception ex){
