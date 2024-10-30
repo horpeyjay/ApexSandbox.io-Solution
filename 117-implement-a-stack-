@@ -15,8 +15,9 @@ public class Stack {
     public Object pop() {
         //implement pop
         Integer index = size() - 1;
-        return objList.get(index);
+        Object o =  objList.get(index);
         objList.remove(index);
+        return o;
     }
     
     public Integer size() {
