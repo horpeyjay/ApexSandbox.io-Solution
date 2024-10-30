@@ -1,0 +1,13 @@
+public List<String> orgNames(List<String> adjectives, List<String> animals) {
+    //code here
+    List<String> namesOrg = new String []();
+    if(!adjectives.isEmpty() && !animals.isEmpty()){
+        for(String s : adjectives){
+            for(String a : animals){
+                String tempName = s + '-' + a;
+                namesOrg.add(tempName);
+            }
+        }
+    }
+    return namesOrg;
+}
