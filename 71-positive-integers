@@ -1,0 +1,11 @@
+public List<Integer> positiveIntegers(List<Integer> numbers) {
+    //code here
+    List<Integer> newList = new List<Integer>();
+    if(!numbers.isEmpty()){
+        for(Integer i = 0; i < numbers.size(); i++){
+            if(numbers[i] > 0){
+                newList.add(numbers[i]);
+            }
+        }
+    }
+}
