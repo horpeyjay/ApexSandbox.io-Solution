@@ -9,11 +9,11 @@ public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
         return false;
     }
     
-    List<Integer> sort1 = new List<Integer>();
-    List<Integer> sort2 = new List<Integer>();
+    List<Integer> sort1 = new List<Integer>(nums1);
+    List<Integer> sort2 = new List<Integer>(nums2);
 
-    sort1.addAll(nums1);
-    sort2.addAll(nums2);
+    sort1.sort();
+    sort2.sort();
 
     return sort1.equals(sort2);
 }
