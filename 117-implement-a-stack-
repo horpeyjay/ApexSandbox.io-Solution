@@ -12,10 +12,14 @@ public class Stack {
     
     public Object pop() {
         //implement pop
-        Integer index = size() - 1;
-        Object o =  objList.get(index);
-        objList.remove(index);
-        return o;
+        if(!isEmpty()){
+            Integer index = size() - 1;
+            Object o =  objList.get(index);
+            objList.remove(index);
+            return o;
+        }
+        return null;
+        
     }
     
     public Integer size() {
