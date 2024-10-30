@@ -1,0 +1,40 @@
+public class Stack {
+    
+    List<Object> objList = new List<object>();
+    public void push(Object obj) {
+        //implement push
+        if(obj != null){
+            if(isEmpty() == false){
+                objList.add(0, obj);
+            }else{
+                objList.add(obj);
+            }
+        }
+    }
+    
+    public Object pop() {
+        //implement pop
+        Integer index = size() - 1;
+        return objList.get(index);
+        objList.remove(index);
+    }
+    
+    public Integer size() {
+        //implement size
+        Integer size = objList.size();
+        return size;
+    }
+    
+    public Object peek(){
+        //implement peek
+        return objList.get(0);
+    }
+    
+    public Boolean isEmpty() {
+        //implement isEmpty
+        if(objList.isEmpty() || objList == null){
+            return true;
+        }
+        return false;
+    }
+}
