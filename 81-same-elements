@@ -1,6 +1,9 @@
 public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
     //code here
     Boolean isTrue;
+    if(nums1 == null && nums2 == null){
+        isTrue = true;
+    }
     if(!nums1.isEmpty() && !nums2.isEmpty()){
         Set<Integer> newList = new Set<Integer>();
         newList.addAll(nums1);
