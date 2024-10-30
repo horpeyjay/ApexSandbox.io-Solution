@@ -1,0 +1,15 @@
+public String employeeEmail(Map<String, String> employeeIdToEmail, String employeeId) {
+    //code here
+    String email;
+    if(!employeeIdToEmail.isEmpty() || employeeIdToEmail != null && !String.isBlank(employeeId) || employeeId != null){
+        for(String emId : employeeIdToEmail.keySet()){
+            if(emId == employeeId){
+                email = employeeIdToEmail.get(emId);
+            }else{
+                email = 'info@apexsandbox.io';
+            }
+        }
+    }
+
+    return email;
+}
