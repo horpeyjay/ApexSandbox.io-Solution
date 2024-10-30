@@ -3,8 +3,11 @@ public Set<Id> accountIds(List<Opportunity> opps) {
     Set<Id> accIds = new Set<Id>();
 
     if(!opps.isEmpty() || opps.size() > 0){
+        
         for(Opportunity o : opps){
-            accIds.add(o.AccountId);
+            if(o.AccountId != null){
+                accIds.add(o.AccountId);
+            } 
         }
     }
     return accIds;
