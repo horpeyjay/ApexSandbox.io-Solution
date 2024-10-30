@@ -7,10 +7,11 @@ public Map<String, String> phonebook(List<Contact> contacts) {
                 String name = c.FirstName + ' ' + c.LastName;
                 String phone = c.Phone;
                 nameToPhoneMap.put(name, phone);
+                if(c.Name != null ){
+                    nameToPhoneMap.put(c.Name, c.Phone);
+                }
             }
-            if(c.Name != null){
-                nameToPhoneMap.put(c.Name, c.Phone);
-            }
+            
         }
     }
     return nameToPhoneMap;
