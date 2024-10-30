@@ -1,0 +1,16 @@
+public List<String> fullNames(List<String> firstNames, List<String> lastNames) {
+    //code here
+    List<String> name = new List<String>();
+    if(!firstNames.isEmpty() || firstNames != null && lastNames != null || !lastNames.isEmpty()){
+        if(firstNames.size() == lastNames.size()){
+            for(Integer i = 0; i < firstNames.size(); i++){
+                String fName = firstNames[i];
+                String lName = lastNames[i];
+
+                String full = fName + ' ' + lName;
+                name.add(full);
+            }
+        }
+    }
+    return name;
+}
