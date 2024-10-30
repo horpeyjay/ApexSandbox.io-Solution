@@ -1,0 +1,17 @@
+public static Integer findLast(List<Integer> nums, Integer target) {
+   // code here
+   Integer index;
+   try{
+       if(!nums.isEmpty()){
+           for(Integer i = 0; i < nums.size(); i++){
+               if(nums[i] == target){
+                   index = i;
+               }
+           }
+           return index;
+       }
+
+   }catch(Exception ex){
+       return 0;
+   }
+}
