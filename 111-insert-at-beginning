@@ -1,9 +1,15 @@
 public void insertAtStart(String cityName, List<String> cities) {
     //code here
+    try{
+
+   
     if(!String.isBlank(cityName) || cityName != ''){
         if(cities == null){
             cities = new List<String>();
         }
         cities.add(0, cityName);
+    }
+    }catch(Exception ex){
+        system.debug(ex.getMessage());
     }
 }
