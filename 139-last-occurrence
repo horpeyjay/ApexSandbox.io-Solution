@@ -8,9 +8,9 @@ public static Integer findLast(List<Integer> nums, Integer target) {
                    index = i;
                }
            }
-           return index;
+           
        }
-
+    return index;
    }catch(Exception ex){
        return 0;
    }
