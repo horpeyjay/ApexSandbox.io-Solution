@@ -34,9 +34,6 @@ public class Stack {
     
     public Boolean isEmpty() {
         //implement isEmpty
-        if(objList.isEmpty() || objList == null){
-            return true;
-        }
-        return false;
+        return objList.isEmpty();
     }
 }
