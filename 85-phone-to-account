@@ -1,0 +1,12 @@
+public Map<String, Account> phoneToAccount(List<Account> accounts) {
+    //code here
+    Map<String, Account> phoneAccMap = new Map<String, Account>();
+    if(!accounts.isEmpty()){
+        for(Account acc : accounts){
+            if(acc.Phone != null){
+                phoneAccMap.put(acc.Phone, acc);
+            }
+        }
+    }
+    return phoneAccMap;
+}
