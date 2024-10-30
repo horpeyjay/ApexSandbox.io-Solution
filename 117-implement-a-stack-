@@ -3,10 +3,8 @@ public class Stack {
     List<Object> objList = new List<object>();
     public void push(Object obj) {
         //implement push
-        if(obj != null){
+        if(obj != null ){
             if(isEmpty() == false){
-                objList.add(0, obj);
-            }else{
                 objList.add(obj);
             }
         }
@@ -22,13 +20,16 @@ public class Stack {
     
     public Integer size() {
         //implement size
-        Integer size = objList.size();
-        return size;
+        return objList.size();
+       
     }
     
     public Object peek(){
         //implement peek
-        return objList.get(0);
+        if(!isEmpty()){
+            return objList.get(size() - 1);
+        }
+        return null
     }
     
     public Boolean isEmpty() {
