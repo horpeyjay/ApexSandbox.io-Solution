@@ -4,6 +4,7 @@ public void insertAtStart(String cityName, List<String> cities) {
         if(!cities.isEmpty() || cities != null ){
             cities.add(0, cityName);
         }else{
+            cities = new List<String>();
             cities.add(cityName);
         }
     }
