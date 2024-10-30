@@ -1,0 +1,26 @@
+public boolean isSorted(List<Integer> numbers) {
+    //code here
+    Boolean isAscending = true;
+    Boolean isDescending = true;
+    if(numbers == null || numbers.size() < 3){
+        return true;
+    }
+    if(!numbers.isEmpty()){   
+        for(Integer i = 1; i < numbers.size(); i++){
+            if(numbers[i] < numbers[i - 1]){
+                isAscending = false;
+            }
+
+            if(numbers[i] > numbers[i - 1]){
+                isDescending = false;
+            }
+        }
+    }
+    if(isAscending == true){
+        return true;
+    }else if(isDescending == true){
+        return true;
+    }else{
+        return false;
+    }
+}
