@@ -8,4 +8,5 @@ public List<Integer> positiveIntegers(List<Integer> numbers) {
             }
         }
     }
+    return newList;
 }
