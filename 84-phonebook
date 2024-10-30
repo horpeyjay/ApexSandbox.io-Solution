@@ -3,14 +3,11 @@ public Map<String, String> phonebook(List<Contact> contacts) {
     Map<String, String> nameToPhoneMap = new Map<String, String>();
     if(!contacts.isEmpty() || contacts != null){
         for(Contact c : contacts){
-            if(c.Phone != null){
-                String name = c.FirstName + ' ' + c.LastName;
-                String phone = c.Phone;
-                nameToPhoneMap.put(name, phone);
-            }
-
-            if(c.Name != null && c.Phone != null){
-                nameToPhoneMap.put(c.Name, c.Phone);
+            
+            String name = (!c.Name != null) ? c.Name : c.FirstName + ' ' + c.LastName;
+            
+            if(name != null && c.Phone != null){
+                nameToPhoneMap.put(name, c.Phone);
             }
             
         }
