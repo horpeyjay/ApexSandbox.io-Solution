@@ -5,9 +5,10 @@ public String employeeEmail(Map<String, String> employeeIdToEmail, String employ
         for(String emId : employeeIdToEmail.keySet()){
             if(emId == employeeId){
                 email = employeeIdToEmail.get(emId);
-            }else{
-                email = 'info@apexsandbox.io';
             }
+        }
+        if(String.isBlank(email)){
+            email = 'info@apexsandbox.io';
         }
     }
 
