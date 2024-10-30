@@ -1,6 +1,6 @@
 public List<String> orgNames(List<String> adjectives, List<String> animals) {
     //code here
-    List<String> namesOrg = new String []();
+    List<String> namesOrg = new List<String>();
     if(!adjectives.isEmpty() && !animals.isEmpty()){
         for(String s : adjectives){
             for(String a : animals){
