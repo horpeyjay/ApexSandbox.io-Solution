@@ -1,17 +1,19 @@
 public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
     //code here
-    Boolean isTrue;
+    
     if(nums1 == null && nums2 == null){
-        isTrue = true;
+        return true;
     }
-    if(!nums1.isEmpty() && !nums2.isEmpty()){
-        Set<Integer> newList = new Set<Integer>();
-        newList.addAll(nums1);
-        if(newList.containsAll(nums2)){
-            isTrue = true;
-        }else{
-            isTrue =  false;
-        }
+
+    if(nums1 == null || nums2 == null){
+        return false;
     }
-    return isTrue;
+    
+    List<Integer> sort1 = new List<Integer>();
+    List<Integer> sort2 = new List<Integer>();
+
+    sort1.addAll(nums1);
+    sort2.addAll(nums2);
+
+    return sort1.equals(sort2);
 }
