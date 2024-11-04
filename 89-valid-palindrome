@@ -1,0 +1,21 @@
+public Boolean isPalindrome(String str){
+//code here
+    if (str == null || str == ''){
+        return false;
+    }
+    String lowerString = str.toLowerCase();
+    String cleanString;
+    
+    for(Integer i = 0; i < lowerString.length(); i++){
+        if(lowerString[i].isAlphanumeric()){
+            cleanString += lowerString[i];
+        }
+    }
+
+    String reverseString = cleanString.reverse();
+
+    if(reverseString == cleanString){
+        return true;
+    }
+    return false;
+}
