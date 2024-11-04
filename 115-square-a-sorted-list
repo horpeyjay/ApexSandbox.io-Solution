@@ -1,0 +1,12 @@
+public static List<Integer> squareList(List<Integer> nums){
+    //solution here
+    List<Integer> newList = new List<Integer>();
+    if(!nums.isEmpty()){
+        for (Integer n : nums){
+            Integer nsqrd = n * n;
+            newList.add(nsqrd);
+        }
+    }
+    newList.sort();
+    return newList;
+}
