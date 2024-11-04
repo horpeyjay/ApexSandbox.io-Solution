@@ -1,21 +1,16 @@
 public Integer maxProfit(List<Integer> prices){
     //code here
     Integer profit = 0;
-    Integer smallPrice;
+    Integer smallPrice = Integer.MAX_VALUE;
     if(!prices.isEmpty()){
         for(Integer i = 0; i < prices.size(); i++){
-            if(i == 0){
-                smallPrice = prices[0];
-            }
-
             if(prices[i] < smallPrice){
-                Integer holdingProfit = smallPrice - prices[i];
-
                 smallPrice = prices[i];
+            }
+            Integer potentialProfit = prices[i] - smallPrice;
 
-                if(holdingProfit > profit){
-                    profit = holdingProfit;
-                }
+            if(potentialProfit > profit){
+                profit = potentialProfit;
             }
         }
     }
