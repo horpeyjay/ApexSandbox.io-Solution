@@ -1,0 +1,13 @@
+public void plusOne(List<Integer> numbers) {
+    // code here
+    if(numbers != null && !numbers.isEmpty()){
+        for(Integer i = numbers.size() - 1; i >= 0; i--){
+            if(numbers[i] < 9){
+                numbers[i] += 1
+            }else{
+                numbers[i] = 0;
+                numbers[i - 1] += 1;
+            }
+        }
+    }
+}
