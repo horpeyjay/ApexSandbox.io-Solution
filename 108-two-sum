@@ -7,7 +7,7 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
         if(indexToNumMap.containsKey(othernum)){
             Integer index = indexToNumMap.get(othernum);
             output.add(index);
-            output.add([i]);
+            output.add(i);
             return output;
         }
 
