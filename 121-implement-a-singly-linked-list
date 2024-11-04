@@ -93,17 +93,10 @@ public class LinkedList{
 public class Node{
     Integer data;
     Node next;
-
-    // Inner Node class to represent each element in the linked list
-    private class Node {
-        public Integer data;
-        public Node next;
-
-        // Node constructor to initialize data
-        public Node(Integer data) {
-            this.data = data;
-            this.next = null;
-        }
+    // Node constructor to initialize data
+    public Node(Integer data) {
+        this.data = data;
+        this.next = null;
     }
 
 }
