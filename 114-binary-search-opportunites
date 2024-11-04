@@ -1,0 +1,14 @@
+public static Integer search(List<Opportunity> opportunities, Integer target){
+    // solution here
+
+    if(opportunities.isEmpty || opportunities == null){
+        return -1;
+    }
+
+    for(Integer i = 0; i < opportunities.size(); i++){
+        if(opportunities[i].Amount == target){
+            return i;
+        }
+    }
+    return -1;
+}
