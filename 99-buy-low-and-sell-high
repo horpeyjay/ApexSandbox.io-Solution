@@ -1,7 +1,7 @@
 public Integer maxProfit(List<Integer> prices){
     //code here
     Integer profit = 0;
-    Integer smallPrice = Integer.MAX_VALUE;
+    Integer smallPrice = 1000;
     if(!prices.isEmpty()){
         for(Integer i = 0; i < prices.size(); i++){
             if(prices[i] < smallPrice){
