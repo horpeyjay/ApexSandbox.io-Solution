@@ -23,7 +23,7 @@ public Boolean isValid(String s){
                 String lastOpen = openBrackets[size - 1];
 
                 if(closeToOpenBrackets.get(currentChar) != lastOpen){
-                    return false
+                    return false;
                 }
                 openBrackets.remove(size - 1);
             }else{
