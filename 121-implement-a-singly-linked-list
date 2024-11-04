@@ -86,7 +86,7 @@ public class LinkedList{
     }
 
     // Method to get the current size of the list
-    public Integer getSize() {
+    public Integer Size() {
         return this.size;
     }
 
