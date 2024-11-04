@@ -4,12 +4,12 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
     for(Integer i = 0; i < nums.size(); i++){
         Integer othernum = 0;
         if(nums[i] < target){
-            output.add(nums[i]);
+            output.add(i);
             othernum = target - i;
         }
 
-        if(i == othernum){
-            output.add(nums[i]);
+        if(nums[i] == othernum){
+            output.add(i);
         }
     }
 
