@@ -30,7 +30,8 @@ public class LinkedList{
     // Method to remove a node from the front of the list
     public Integer removeFromFront() {
         if (this.size == 0) {
-            throw new LinkException('Empty List');
+            //throw new LinkException('Empty List');
+            return null;
         }
         Node removedNode = this.head;
         this.head = this.head.next;
@@ -57,7 +58,8 @@ public class LinkedList{
     // Method to remove a node from the end of the list
     public Integer removeFromTail() {
         if (this.size == 0) {
-            throw new LinkException('Empty List');
+            //throw new LinkException('Empty List');
+            return null;
         }
         if (this.size == 1) {
             Node temp = this.head;
