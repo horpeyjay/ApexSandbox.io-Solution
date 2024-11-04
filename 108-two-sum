@@ -1,9 +1,9 @@
 public static List<Integer> twoSum(List<Integer> nums, Integer target) {
     //code here
     List<Integer> output = new List<Integer>();
-    for(Integer i : nums){
+    for(Integer i = 0; i < nums.size(); i++){
         Integer othernum = 0;
-        if(i < target){
+        if(nums[i] < target){
             output.add(nums[i]);
             othernum = target - i;
         }
