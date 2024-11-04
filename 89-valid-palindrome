@@ -8,7 +8,7 @@ public Boolean isPalindrome(String str){
     
     for(Integer i = 0; i < lowerString.length(); i++){
         String currentChar = lowerString.subString(i, i + 1);
-        if(currentChar.matches('[a-zA-z]')){
+        if(currentChar >= 'a' || currentChar <= 'z'){
             cleanString += currentChar;
         }
     }
