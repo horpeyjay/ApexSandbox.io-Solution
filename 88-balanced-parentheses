@@ -1,0 +1,37 @@
+public Boolean isValid(String s){
+    //code here 
+    //check for null values
+    if(s == null || String.isBlank(s)){
+        return null;
+    }
+    Map<String, String> closeToOpenBrackets = new Map<String, String>();
+    closeToOpenBrackets.put(')', '(');
+    closeToOpenBrackets.put(']', '[');
+    closeToOpenBrackets.put('}', '{');
+
+    //if the lenght isn't even, the end it here
+    Integer lenght = s.length();
+    if(Math.mod(lenght, 2) != 0){
+        return false;
+    }
+    List<String> openBrackets = new List<String>();
+    for(Integer i = 0; i < lenght; i++){
+        String currentChar = s.subString(i, i+1);
+        Integer size = openBrackets.size();
+        if(closeToOpenBrackets.containsKey(currentChar)){
+            if(size > 0){
+                String lastOpen = openBrackets[size - 1];
+
+                if(closeToOpenBrackets.get(currentChar) != lastOpen){
+                    return false
+                }
+                openBrackets.remove(size - 1);
+            }else{
+                return false;
+            }
+        }else{
+            openBrackets.add(currentChar);
+        }
+    }
+    return openBrackets.size() == 0;
+}
