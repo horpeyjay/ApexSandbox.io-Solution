@@ -1,0 +1,18 @@
+public static List<Integer> twoSum(List<Integer> nums, Integer target) {
+    //code here
+    List<Integer> output = new List<Integer>();
+    for(Integer i : nums){
+        Integer othernum = 0;
+        if(i < target){
+            output.add(nums[i]);
+            othernum = target - i;
+        }
+
+        if(i == othernum){
+            output.add(nums[i]);
+        }
+    }
+
+    return output;
+
+}
