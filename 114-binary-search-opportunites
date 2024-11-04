@@ -5,9 +5,18 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
         return -1;
     }
 
-    for(Integer i = 0; i < opportunities.size(); i++){
-        if(opportunities[i].Amount == target){
-            return i;
+    Integer left = 0;
+    Integer right = opportunities.size() - 1;
+
+    while(left <= right){
+        Integer middle = left + (right - left)/2;
+
+        if(opportunities[middle].Amount == target){
+            return middle;
+        }else if (opportunities[middle].Amount < target){
+            left = middle + 1;
+        }else{
+            right = middle - 1;
         }
     }
     return -1;
