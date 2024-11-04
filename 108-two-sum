@@ -4,16 +4,13 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
     Map<Integer, Integer> indexToNumMap = new Map<Integer, Integer>();
     for(Integer i = 0; i < nums.size(); i++){
         Integer othernum = target - nums[i];
-            if(indexToNumMap.containsKey(othernum)){
-                Integer index = indexToNumMap.get(othernum);
-                output.add(index);
-                output.add([i]);
-                return output;
-            }
+        if(indexToNumMap.containsKey(othernum)){
+            Integer index = indexToNumMap.get(othernum);
+            output.add(index);
+            output.add([i]);
+            return output;
+        }
 
-            indexToNumMap.put(nums[i], i);
+        indexToNumMap.put(nums[i], i);
     }
-
-    return output;
-
 }
