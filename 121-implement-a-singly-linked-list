@@ -1,6 +1,6 @@
 public class LinkedList{
     // Custom exception for handling errors
-    public class LinkException extends Exception {}
+    //public class LinkException extends Exception {}
 
     // Properties of the linked list
     private Node head;
