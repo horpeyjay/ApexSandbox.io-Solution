@@ -4,11 +4,12 @@ public Boolean isPalindrome(String str){
         return false;
     }
     String lowerString = str.toLowerCase();
-    String cleanString;
+    String cleanString = '';
     
     for(Integer i = 0; i < lowerString.length(); i++){
-        if(lowerString[i].isAlphanumeric()){
-            cleanString += lowerString[i];
+        String currentChar = lowerString.subString(i, i + 1);
+        if(currentChar.matches('[a-zA-z]')){
+            cleanString += currentChar;
         }
     }
 
