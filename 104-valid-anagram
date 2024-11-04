@@ -9,7 +9,7 @@ public boolean isAnagram(String s1, String s2) {
         frequencyMap.put(i, currentChar);
     }
 
-    for(Integer i = 0; i < s2.length; i++){
+    for(Integer i = 0; i < s2.length() ; i++){
         String currentChar = s2.subString(i, i + 1);
 
         for(String s : frequencyMap.values()){
