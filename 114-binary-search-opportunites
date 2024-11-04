@@ -1,7 +1,7 @@
 public static Integer search(List<Opportunity> opportunities, Integer target){
     // solution here
 
-    if(opportunities.isEmpty || opportunities == null){
+    if(opportunities.isEmpty() || opportunities == null){
         return -1;
     }
 
