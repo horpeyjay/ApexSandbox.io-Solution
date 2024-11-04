@@ -65,10 +65,20 @@ public class LinkedList{
     }
     public Integer size(){
         return this.size;
-    }    
+    }  
+
+    private class Node{
+        public Integer data;
+        public Node next;
+
+        public Node(Integer data){
+            this.data = data;
+            this.next = null;
+        }
+    }  
 }
 
-public class Node{
+/*public class Node{
     public Integer data;
     public Node next;
 
@@ -76,4 +86,4 @@ public class Node{
         this.data = data;
         this.next = null;
     }
-}
+}*/
