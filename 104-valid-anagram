@@ -3,44 +3,30 @@ public boolean isAnagram(String s1, String s2) {
     if(s1.length() != s2.length()){
         return false;
     }
-    Map<Integer, String> frequencyMap = new Map<Integer, String>();
+    Map<String, Integer> frequencyMap = new Map<String, Integer>();
     for(Integer i = 0; i < s1.length(); i++){
         String currentChar = s1.subString(i, i + 1);
-        frequencyMap.put(i, currentChar);
+
+        if(frequencyMap.contains(currentChar)){
+            frequencyMap.put(currentChar, frequencyMap.get(currentChar) + 1);
+        }else{
+            frequencyMap.put(currentChar, 1);
+        }
+        
     }
 
     for(Integer i = 0; i < s2.length() ; i++){
         String currentChar = s2.subString(i, i + 1);
 
-        for(String s : frequencyMap.values()){
-            if(s != currentChar){
-                return false;
-            }else{
-                frequencyMap.remove(s);
-            }
+        if(!frequencyMap.containsKey(currentChar)){
+            return false;
         }
+        frequencyMap.put(currentChar, frequencyMap.get(currentChar) - 1);
 
-       
+        if(frequencyMap.get(currentChar) == 0){
+            frequencyMap.remove(currentChar);
+        }
     }
-    if(frequencyMap.isEmpty()){
-        return true;
-    }
+
+    return frequencyMap.isEmpty();
 }
-
-/*function isAnagram(s1, s2):
-
-    // Step 4: Loop through each character in s2 to check if it matches frequencyMap
-    for each character in s2:
-        if character is not in frequencyMap:
-            return false
-        else:
-            decrement frequencyMap[character] by 1
-            if frequencyMap[character] becomes 0:
-                remove character from frequencyMap
-
-    // Step 5: If frequencyMap is empty after the loop, the two words are anagrams
-    if frequencyMap is empty:
-        return true
-    else:
-        return false
-*/
