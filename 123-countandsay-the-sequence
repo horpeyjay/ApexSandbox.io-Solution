@@ -10,15 +10,15 @@ public string countAndSay(integer N) {
         Integer count = 1;
 
         for(Integer i = 0; i < previous_sequence.length(); i++){
-            if(previous_sequence[i] == previous_sequence[i - 1]){
+            if(previous_sequence.subString(i, i+1)== previous_sequence.subString(i-1, i)){
                 count++;
             }else{
-                result += String.valueOf(count) + previous_sequence[i-1];
+                result += String.valueOf(count) + previous_sequence.subString(i-1, i);
                 count = 1;
             }
         }
 
-        result = result + String.valueOf(count) + previous_sequence[previous_sequence.lenght()-1];
+        result = result + String.valueOf(count) + previous_sequence.subString(previous_sequence.length()-1, previous_sequence.length());
         return result;
     }
 
