@@ -1,7 +1,7 @@
 public List<String> commonChars(List<String> strs){
     //solution here
     if(strs.isEmpty() || strs == null){
-        return null;
+        return new List<String>();
     }
 
     // there is a count key with the string as the value
@@ -18,9 +18,8 @@ public List<String> commonChars(List<String> strs){
         }
     }
 
-    strs.remove(0);
-
-    for(String s : strs){
+    for(Integer j = 1; j < strs.size(); j++ ){
+        String s = strs[j];
         Map<String, Integer> charFreqMap = new Map<String, Integer>();
 
         for(Integer i = 0; i < s.length(); i++){
@@ -28,17 +27,19 @@ public List<String> commonChars(List<String> strs){
             if(charFreqMap.containsKey(currentChar)){
                 Integer count = charFreqMap.get(currentChar);
                 charFreqMap.put(currentChar, count+1);
+            }else{
+                charFreqMap.put(currentChar, 1);
             }
-            charFreqMap.put(currentChar, 1);
+        }
+            
 
-            for(String chr : minFreqMap.keySet()){
-                Integer count;
-                if(charFreqMap.containsKey(chr)){
-                    count = Math.min(minFreqMap.get(chr), charFreqMap.get(chr));
-                    minFreqMap.put(chr, count);
-                }else{
-                    minFreqMap.put(chr, 0);
-                }
+        for(String chr : minFreqMap.keySet()){
+            Integer count;
+            if(charFreqMap.containsKey(chr)){
+                count = Math.min(minFreqMap.get(chr), charFreqMap.get(chr));
+                minFreqMap.put(chr, count);
+            }else{
+                minFreqMap.put(chr, 0);
             }
         }
     }
