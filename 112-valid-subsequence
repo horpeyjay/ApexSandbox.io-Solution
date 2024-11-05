@@ -2,33 +2,22 @@ public Boolean isSubSequence(String s1, String s2){
     //code here
     s1 = s1.toLowerCase();
     s2 = s2.toLowerCase();
-    List<String> s1char = new List<String>();
-    List<String> s2char = new List<String>();
-    List<String> finalset = new List<String>();
+
+    Integer i = 0;
+
     if(s1.length() < s2.length()){
-        for(Integer i = 0; i < s1.length(); i++){
-            String currentChar = s1.subString(i, i + 1);    
-            s1char.add(currentChar);  
-        }
-
-        for (Integer j = 0; j < s2.length(); j++){
-            String currentS2char = s2.subString(j, j+1);
-            s2char.add(currentS2char);
-        }
-
-        for(String charS1 : s1char){
-            for (Integer i= 0; i < s2char.size(); i++){
-                if(charS1 != s2char[i]){
-                    s2char.remove(i);
-                }else{
-                    finalset.add(charS1);
-                }
+        for(Integer j = 0; j < s2.length(); j++){
+            if(s1.charAt(i) == s2.charAt(j)){
+                i++
             }
         }
+
+        if(i == s1.length()){
+            return true;
+        }
     }
 
-    if(finalset.size() == s1char.size()){
-        return true;
-    }
-    return false;
+    return i == s1.length();
+
+
 }
