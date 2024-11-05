@@ -9,7 +9,7 @@ public string countAndSay(integer N) {
         String result = '';
         Integer count = 1;
 
-        for(Integer i = 0; i < previous_sequence.length(); i++){
+        for(Integer i = 1; i < previous_sequence.length(); i++){
             if(previous_sequence.subString(i, i+1)== previous_sequence.subString(i-1, i)){
                 count++;
             }else{
