@@ -2,7 +2,7 @@ public void insertAtStart(String cityName, List<String> cities) {
     //code here
     try{
     if(!String.isBlank(cityName) || cityName != ''){
-        if(cities == null || cities.isEmpty()){
+        if(cities == null){
             cities = new List<String>();
             //cities.add(cityName);
         }
