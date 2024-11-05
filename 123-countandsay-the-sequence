@@ -1,0 +1,25 @@
+public string countAndSay(integer N) {
+    // code here
+    if( N >= 1 && N <= 20){
+        if(N == 1){
+            return '1';
+        }
+
+        String previous_sequence = countAndSay(N - 1);
+        String result = '';
+        Integer count = 1;
+
+        for(Integer i = 0; i < previous_sequence.length(); i++){
+            if(previous_sequence[i] == previous_sequence[i - 1]){
+                count++;
+            }else{
+                result += String.valueOf(count) + previous_sequence[i-1];
+                count = 1;
+            }
+        }
+
+        result = result + String.valueOf(count) + previous_sequence[previous_sequence.lenght()-1];
+    }
+
+    return result;
+}
