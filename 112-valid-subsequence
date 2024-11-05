@@ -19,7 +19,7 @@ public Boolean isSubSequence(String s1, String s2){
         for(String charS1 : s1char){
             for (Integer i= 0; i < s2char.size(); i++){
                 if(charS1 != s2char[i]){
-                    s2char.remove[i];
+                    s2char.remove(i);
                 }else{
                     finalset.add(charS1);
                 }
