@@ -51,5 +51,5 @@ public List<String> commonChars(List<String> strs){
         }
     }
 
-    return result;
+    return output;
 }
