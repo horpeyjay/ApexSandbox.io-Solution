@@ -1,0 +1,56 @@
+public List<Integer> twoSum(List<Integer> nums, Integer target){
+    //code here
+    List<Integer> output = new List<Integer>();
+    if(nums == null || nums.isEmpty()){
+        return output;
+    }
+
+    Integer left = 0;
+    Integer right = num.size() - 1;
+
+    while(left < right){
+        Integer currentSum = nums[left] + nums[right];
+
+        if (currentSum == target){
+            output.add(left);
+            output.add(right);
+            return output;
+        }
+
+        if(currentSum < target){
+            left++;
+        }
+
+        if(currentSum > target){
+            right--;
+        }
+    }
+
+    return output;
+
+}
+
+/*
+function findIndices(prices, target):
+ 
+
+    // Loop until the two pointers meet
+    while left < right:
+        currentSum = prices[left] + prices[right]
+
+        // Check if the currentSum equals the target
+        if currentSum == target:
+            return [left, right] // Return the indices
+
+        // If currentSum is less than target, move left pointer to the right
+        if currentSum < target:
+            left = left + 1
+
+        // If currentSum is greater than target, move right pointer to the left
+        else:
+            right = right - 1
+
+    // If no solution found, return null or empty list
+    return null // or return []
+
+*/
