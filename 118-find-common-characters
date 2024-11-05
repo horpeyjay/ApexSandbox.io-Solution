@@ -1,0 +1,55 @@
+public List<String> commonChars(List<String> strs){
+    //solution here
+    if(strs.isEmpty() || strs == null){
+        return null;
+    }
+
+    // there is a count key with the string as the value
+    Map<String, Integer> minFreqMap = new Map<String, Integer>();
+    String firstString = strs[0];
+
+    for(Integer i = 0; i < firstString.length(); i++){
+        String currentChar = firstString.subString(i, i+1);
+        if(!minFreqMap.containsKey(currentChar)){
+            minFreqMap.put(currentChar, 1)
+        }else{
+            Integer count = minFreqMap.get(currentChar);
+            minFreqMap.put(currentChar, count+1);
+        }
+    }
+
+    List<String> minusFirstIndex = strs.remove(0);
+
+    for(String s : minusFirstIndex){
+        Map<String, Integer> charFreqMap = new Map<String, Integer>();
+
+        for(Integer i = 0; i < s.length(); i++){
+            String currentChar = s.subString(i, i + 1);
+            if(charFreqMap.containsKey(currentChar)){
+                Integer count = charFreqMap.get(currentChar);
+                charFreqMap.put(currentChar, count+1);
+            }
+            charFreqMap.put(currentChar, 1);
+
+            for(String chr : minFreqMap.keySet()){
+                Integer count;
+                if(charFreqMap.containsKey(chr)){
+                    count = Math.min(minFreqMap.get(chr), charFreqMap.get(chr));
+                    minFreqMap.put(chr, count);
+                }else{
+                    minFreqMap.put(chr, 0);
+                }
+            }
+        }
+    }
+
+    List<String> output = new List<String>();
+
+    for(String s : minFreqMap.keySet()){
+        for(Integer i = 1; 1 <= minFreqMap.get(s); i++){
+            output.add(s);
+        }
+    }
+
+    return result;
+}
