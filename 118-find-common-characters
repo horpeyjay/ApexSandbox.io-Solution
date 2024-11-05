@@ -11,7 +11,7 @@ public List<String> commonChars(List<String> strs){
     for(Integer i = 0; i < firstString.length(); i++){
         String currentChar = firstString.subString(i, i+1);
         if(!minFreqMap.containsKey(currentChar)){
-            minFreqMap.put(currentChar, 1)
+            minFreqMap.put(currentChar, 1);
         }else{
             Integer count = minFreqMap.get(currentChar);
             minFreqMap.put(currentChar, count+1);
