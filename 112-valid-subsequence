@@ -8,7 +8,7 @@ public Boolean isSubSequence(String s1, String s2){
     if(s1.length() < s2.length()){
         for(Integer i = 0; i < s1.length(); i++){
             String currentChar = s1.subString(i, i + 1);    
-            s1char.add(currentS2char);  
+            s1char.add(currentChar);  
         }
 
         for (Integer j = 0; j < s2.length(); j++){
