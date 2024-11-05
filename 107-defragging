@@ -1,0 +1,18 @@
+public void defragging(Integer[] memory)
+{
+    // code here
+    Integer insertPosition = 0;
+    if(!memory.isEmpty() || memory == null){
+        for(Integer i = 0; i < memory.size(); i++){
+            if(memory[i] != -1){
+                memory[insertPosition] = memory[i];
+                insertPosition++;
+            } 
+        }
+    }
+
+    while(insertPosition < memory.size()){
+        memory[insertPosition] = -1;
+        insertPosition++;
+    }
+}
