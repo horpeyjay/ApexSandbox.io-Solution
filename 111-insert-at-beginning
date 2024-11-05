@@ -1,17 +1,10 @@
 public void insertAtStart(String cityName, List<String> cities) {
     //code here
-    if(cities == null && !String.isBlank(cityName)){
+    if(cities == null || cities.isEmpty()){
         cities = new List<String>();
-        cities.add(cityName);
-    }else{
-        try{
-       
-    if(!String.isBlank(cityName) || cityName != ''){
-            cities.add(0, cityName);
     }
-    }catch(Exception ex){
-        system.debug(ex.getMessage());
+
+    if(!String.isBlank || cityName = ''){
+        cities.add(0, cityName);
     }
-    }
-    
 }
