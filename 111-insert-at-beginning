@@ -4,7 +4,7 @@ public void insertAtStart(String cityName, List<String> cities) {
         cities = new List<String>();
     }
 
-    if(!String.isBlank(cityName) || cityName = ''){
+    if(!String.isBlank(cityName) || cityName != ''){
         cities.add(0, cityName);
     }
 }
