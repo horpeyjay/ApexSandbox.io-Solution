@@ -19,7 +19,8 @@ public string countAndSay(integer N) {
         }
 
         result = result + String.valueOf(count) + previous_sequence[previous_sequence.lenght()-1];
+        return result;
     }
 
-    return result;
+    return '';
 }
