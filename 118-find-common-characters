@@ -18,9 +18,9 @@ public List<String> commonChars(List<String> strs){
         }
     }
 
-    List<String> minusFirstIndex = strs.remove(0);
+    strs.remove(0);
 
-    for(String s : minusFirstIndex){
+    for(String s : strs){
         Map<String, Integer> charFreqMap = new Map<String, Integer>();
 
         for(Integer i = 0; i < s.length(); i++){
