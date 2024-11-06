@@ -1,33 +1,33 @@
 public static Boolean sameString(String str1, String str2){
     // solution
 
-    Integer s1 = 0;
-    Integer s2 = 0;
+    Integer s1 = str1.length() - 1;
+    Integer s2 = str2.length() - 1;
 
     while (s1 >= 0 || s2 >= 0){
-        Integer right = 0;
+        Integer backSpaceCount1 = 0;
         while(s1 > 0){
             String currentChar = str1.subString(s1, s1+1);
 
             if(currentChar == '#'){
-                right++;
+                backSpaceCount1++;
                 s1--;
-            }else if(right > 0){
-                right--;
+            }else if(backSpaceCount1 > 0){
+                backSpaceCount1--;
                 s1--;
             }else{
                 break;
             }
         }
-
+        Integer backSpaceCount2 = 0;
         while(s2 > 0){
             String currentChar1 = str2.subString(s2, s2+1);
 
             if(currentChar1 == '#'){
-                right++;
+                backSpaceCount2++;
                 s2--;
-            }else if(right > 0){
-                right--;
+            }else if(backSpaceCount2 > 0){
+                backSpaceCount2--;
                 s2--;
             }else{
                 break;
@@ -40,14 +40,15 @@ public static Boolean sameString(String str1, String str2){
 
             if(alpha1 != alpha2){
                 return false;
-            }else if(s1 >= 0 || s2 >= 0){
-                return false;
             }
-
-            s1--;
-            s2--;
+        }else if(s1 >= 0 || s2 >= 0){
+            return false;
         }
+
+        s1--;
+        s2--;
         
     }
+    
     return true;
 }
