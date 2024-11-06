@@ -10,7 +10,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     Integer maxLength = 0;
 
     for(Integer i = 0; i < str.length(); i++){
-        String charRight = s.subString(i, i+1);
+        String charRight = str.subString(i, i+1);
         
         if(frequencyMap.containsKey(charRight)){
             frequencyMap.put(charRight, frequencyMap.get(charRight) + 1);
