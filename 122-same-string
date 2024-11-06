@@ -8,7 +8,7 @@ public static Boolean sameString(String str1, String str2){
         // Process backspaces for str1
         Integer backspaceCount1 = 0;
         while (s1 >= 0) {
-            if (str1.substring(s1, s1 + 1).equals("#")) {
+            if (str1.substring(s1, s1 + 1).equals('#')) {
                 backspaceCount1++;
                 s1--;
             } else if (backspaceCount1 > 0) {
@@ -22,7 +22,7 @@ public static Boolean sameString(String str1, String str2){
         // Process backspaces for str2
         Integer backspaceCount2 = 0;
         while (s2 >= 0) {
-            if (str2.substring(s2, s2 + 1).equals("#")) {
+            if (str2.substring(s2, s2 + 1).equals('#')) {
                 backspaceCount2++;
                 s2--;
             } else if (backspaceCount2 > 0) {
