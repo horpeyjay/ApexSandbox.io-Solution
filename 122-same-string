@@ -1,54 +1,53 @@
 public static Boolean sameString(String str1, String str2){
     // solution
 
-    Integer s1 = str1.length() - 1;
-    Integer s2 = str2.length() - 1;
+    Integer s1 = str1.length() - 1; // Start at the last character of str1
+    Integer s2 = str2.length() - 1; // Start at the last character of str2
 
-    while (s1 >= 0 || s2 >= 0){
-        Integer backSpaceCount1 = 0;
-        while(s1 > 0){
-            String currentChar = str1.subString(s1, s1+1);
-
-            if(currentChar == '#'){
-                backSpaceCount1++;
+    while (s1 >= 0 || s2 >= 0) {
+        // Process backspaces for str1
+        Integer backspaceCount1 = 0;
+        while (s1 >= 0) {
+            if (str1.substring(s1, s1 + 1).equals("#")) {
+                backspaceCount1++;
                 s1--;
-            }else if(backSpaceCount1 > 0){
-                backSpaceCount1--;
+            } else if (backspaceCount1 > 0) {
+                backspaceCount1--;  // Skip a character due to a backspace
                 s1--;
-            }else{
-                break;
-            }
-        }
-        Integer backSpaceCount2 = 0;
-        while(s2 > 0){
-            String currentChar1 = str2.subString(s2, s2+1);
-
-            if(currentChar1 == '#'){
-                backSpaceCount2++;
-                s2--;
-            }else if(backSpaceCount2 > 0){
-                backSpaceCount2--;
-                s2--;
-            }else{
+            } else {
                 break;
             }
         }
 
-        if(s1 > 0 && s2 > 0){
-            String alpha1 = str1.subString(s1, s1 + 1);
-            String alpha2 = str2.subString(s2, s2 + 1);
-
-            if(alpha1 != alpha2){
-                return false;
+        // Process backspaces for str2
+        Integer backspaceCount2 = 0;
+        while (s2 >= 0) {
+            if (str2.substring(s2, s2 + 1).equals("#")) {
+                backspaceCount2++;
+                s2--;
+            } else if (backspaceCount2 > 0) {
+                backspaceCount2--;  // Skip a character due to a backspace
+                s2--;
+            } else {
+                break;
             }
-        }else if(s1 >= 0 || s2 >= 0){
-            return false;
         }
 
+        // Compare characters at pointers s1 and s2 if both are valid
+        if (s1 >= 0 && s2 >= 0) {
+            String alpha1 = str1.substring(s1, s1 + 1);
+            String alpha2 = str2.substring(s2, s2 + 1);
+            if (!alpha1.equals(alpha2)) {
+                return false;  // Characters do not match
+            }
+        } else if (s1 >= 0 || s2 >= 0) {
+            return false;  // One string has characters left while the other does not
+        }
+
+        // Move both pointers left to the next character
         s1--;
         s2--;
-        
     }
-    
-    return true;
+
+    return true;  // All characters match after applying backspaces
 }
