@@ -19,7 +19,8 @@ public static Integer longestDistinctSubstring(String str, Integer k){
         }
 
         while(frequencyMap.size() > k){
-            String charLeft = str[left];
+    
+            String charLeft = str.subString(left, left+1);
             frequencyMap.get(charLeft)--;
             if(frequencyMap.get(charLeft) == 0){
                 frequencyMap.remove(charLeft);
