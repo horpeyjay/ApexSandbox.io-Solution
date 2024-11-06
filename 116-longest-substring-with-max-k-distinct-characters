@@ -27,8 +27,9 @@ public static Integer longestDistinctSubstring(String str, Integer k){
             }
             left++;
         }
+        maxLength = Math.max(maxLength, i - left + 1);
     }
 
-    maxLength = Math.max(maxLength, right - left + 1);
+    
     return maxLength;
 }
