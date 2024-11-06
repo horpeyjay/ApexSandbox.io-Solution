@@ -10,8 +10,8 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     Integer maxLength = 0;
 
     for(Integer i = 0; i < str.length(); i++){
-        String charRight = str[i];
-
+        String charRight = s.subString(i, i+1);
+        
         if(frequencyMap.containsKey(charRight)){
             frequencyMap.put(charRight, frequencyMap.get(charRight) + 1);
         }else{
@@ -31,30 +31,3 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     maxLength = Math.max(maxLength, right - left + 1);
     return maxLength;
 }
-
-/*
-function largestSubstringWithKDistinct(str, k):
-
-    // Expand the window by moving the right pointer
-    for right from 0 to length of str - 1:
-
-        // Shrink the window from the left if map size exceeds k
-        while size of frequencyMap > k:
-            charLeft = str[left]
-            
-            // Decrease frequency of the leftmost character
-            decrement frequencyMap[charLeft]
-            
-            // Remove character from map if its count is 0
-            if frequencyMap[charLeft] is 0:
-                remove charLeft from frequencyMap
-
-            // Move the left pointer to shrink the window
-            increment left
-
-        // Update maxLength to be the larger of the current maxLength or the current window size
-        maxLength = max(maxLength, right - left + 1)
-
-    return maxLength
-
-*/
