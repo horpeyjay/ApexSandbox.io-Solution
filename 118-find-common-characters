@@ -3,54 +3,55 @@ public List<String> commonChars(List<String> strs){
     if(strs.isEmpty() || strs == null){
         return new List<String>();
     }
-
-    // there is a count key with the string as the value
-    Map<String, Integer> minFreqMap = new Map<String, Integer>();
+    //get the first string in the list
+    List<Integer> charForFirstString = strs[0].getChars();
     String firstString = strs[0];
+    Map<String, Integer> minFreqMap = new Map<String, Integer>();
+    Map<String, Integer> charFreqMap = new Map<String, Integer>();
+    
 
-    for(Integer i = 0; i < firstString.length(); i++){
-        String currentChar = firstString.subString(i, i+1);
-        if(!minFreqMap.containsKey(currentChar)){
-            minFreqMap.put(currentChar, 1);
-        }else{
-            Integer count = minFreqMap.get(currentChar);
-            minFreqMap.put(currentChar, count+1);
-        }
-    }
+    //store it in a map.
+    Map<String, Integer> letterToAscii = new Map<String, Integer>();
+    if(firstString.length() == charForFirstString.size()){
+        for(Integer i = 0; i < firstString.length(); i++){
+            String currentChar = firstString.subString(i, i+1);
 
-    for(Integer j = 1; j < strs.size(); j++ ){
-        String s = strs[j];
-        Map<String, Integer> charFreqMap = new Map<String, Integer>();
-
-        for(Integer i = 0; i < s.length(); i++){
-            String currentChar = s.subString(i, i + 1);
-            if(charFreqMap.containsKey(currentChar)){
-                Integer count = charFreqMap.get(currentChar);
-                charFreqMap.put(currentChar, count+1);
+            if(!minFreqMap.containsKey(currentChar)){
+                minFreqMap.put(currentChar, 1);
             }else{
-                charFreqMap.put(currentChar, 1);
+                minFreqMap.put(currentChar, minFreqMap.get(currentChar)+1);
             }
         }
-            
 
-        for(String chr : minFreqMap.keySet()){
-            Integer count;
-            if(charFreqMap.containsKey(chr)){
-                count = Math.min(minFreqMap.get(chr), charFreqMap.get(chr));
-                minFreqMap.put(chr, count);
-            }else{
-                minFreqMap.put(chr, 0);
+        for(Integer j = 1; j < strs.size(); j++){
+            String s = strs[j];
+
+            for(Integer k = 0; k < s.length(); k++){
+                String currentChar = s.subString(k, k + 1);
+
+                if(charFreqMap.containsKey(currentChar)){
+                    charFreqMap.put(currentChar, charFreqMap.get(currentChar) + 1);
+                }else{
+                    charFreqMap.put(currentChar, 1);
+                }
             }
         }
     }
-
-    List<String> output = new List<String>();
-
+    Integer size = strs.size() - 1;
+    system.debug('List size = ' + size);
+    List<String> finalList = new List<String>();
     for(String s : minFreqMap.keySet()){
-        for(Integer i = 1; 1 <= minFreqMap.get(s); i++){
-            output.add(s);
+        if(charFreqMap.containsKey(s)){
+            if(minFreqMap.get(s) * size == charFreqMap.get(s)){
+                if(minFreqMap.get(s) >= 1){
+                    for(Integer l = 0; l < minFreqMap.get(s); l++){
+                        finalList.add(s);
+                    }
+                }       
+                system.debug('The list contains => ' + finalList);
+            }
         }
-    }
+    }  
+    return finalList;  
 
-    return output;
 }
